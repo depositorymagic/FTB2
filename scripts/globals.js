@@ -4,22 +4,20 @@ ctx = c.getContext('2d');
 ctx.canvas.width  = window.innerWidth;
 ctx.canvas.height = window.innerHeight;
 
-var midPointX = c.width / 2;
-var midPointY = c.height / 2;
-
 var editMode = false;
-
-var offset = {};
-offset.x = 0;
-offset.y = 0;
-offset.totalx = 0;
-offset.totaly = 0;
 
 var accel = {};
 accel.x = 0;
 accel.y = 0;
 accel.amount = 0.005;
 accel.max = 1;
+
+var offset = {};
+offset.x = 0;
+offset.y = 0;
+
+var midPointX = c.width / 2 + accel.x;
+var midPointY = c.height / 2 + accel.y;
 
 var input = {};
 input.up = false;
