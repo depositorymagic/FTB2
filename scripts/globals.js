@@ -1,9 +1,6 @@
 var c = document.getElementById('game'),
 ctx = c.getContext('2d');
 
-ctx.canvas.width  = window.innerWidth;
-ctx.canvas.height = window.innerHeight;
-
 var editMode = false;
 
 var accel = {};
@@ -169,4 +166,14 @@ function ColorLuminance(hex, lum) {
 	}
 
 	return rgb;
+}
+
+var bullets = [];
+
+function Bullet (x, y, size, shape) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.shape = shape;
+    this.barells = [];
 }
