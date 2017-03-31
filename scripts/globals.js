@@ -169,11 +169,39 @@ function ColorLuminance(hex, lum) {
 }
 
 var bullets = [];
+var bulletLib = [];
 
-function Bullet (x, y, size, shape) {
+function Bullet (shape, speed, lifetime, angle) {
+    this.shape = shape;
+    //A shape object has an x, y and dimensions.
+    this.speed = speed;
+    this.lifetime = lifetime;
+    this.angle = angle;
+    this.barells = [];
+}
+
+var barells = [];
+
+function Barell (shape, angle, bullet, reload) {
+    this.shape = shape;
+    //A shape object has an x, y and dimensions.
+    this.angle = angle;
+    this.bullet = bullet;
+    //A bullet copies from this object when it is created.
+    this.reload = reload;
+}
+
+function Circle (x, y, size) {
     this.x = x;
     this.y = y;
     this.size = size;
-    this.shape = shape;
-    this.barells = [];
+    this.type = "circle";
+}
+
+function Rectangle (x, y, width, length) {
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.length = length;
+    this.type = "rectangle";
 }
